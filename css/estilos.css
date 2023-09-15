@@ -1,0 +1,483 @@
+/* Santiago Alvarez y Valentio Cotte */
+
+@font-face {
+  font-family: "REM";
+  src: url(../fonts/REM-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "rock";
+  src: url(../fonts/Rocking.ttf);
+}
+
+@font-face {
+  font-family: "abril";
+  src: url(../fonts/AbrilFatface-Regular.ttf);
+}
+
+/*fuentes*/
+
+html {
+  font-size: 62.5%;
+}
+
+/*font size al 62.5% para que 1rem valga 10px, de esta forma, la letra es mas manejable*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "REM";
+}
+
+body {
+  /*overflow: hidden;*/
+  background-image: url(../img/fondo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*reglas generales para toda la pagina*/
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.navbar li {
+  list-style: none;
+}
+
+.navbar li a {
+  text-decoration: none;
+  margin: 0px 0px 0px 0px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "rock";
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.navbar li a:hover {
+  text-shadow: 3px 3px 1px black;
+}
+
+.logoo {
+  position: relative;
+  top: -300px;
+  animation-name: rollingstone;
+  animation-duration: 2s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+.logoo img {
+  display: flex;
+  justify-content: center;
+  width: 42%;
+  position: relative;
+  background-color: transparent;
+}
+
+@keyframes rollingstone {
+  0% {
+    top: -300px;
+  }
+  100% {
+    top: -5px;
+  }
+}
+
+header {
+  background-color: #d32531;
+  border-bottom: 2px solid black;
+}
+
+/*reglas y animacion del header*/
+
+.animaciones img {
+  width: 30%;
+}
+
+.animaciones {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 25px;
+}
+
+.ani {
+  display: flex;
+  justify-content: center;
+}
+
+.ani img {
+  position: absolute;
+}
+
+.animaciones .ani img {
+  animation-name: animacion2;
+  animation-duration: 3s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animacion2 {
+  0% {
+    left: -500px;
+    opacity: 0;
+  }
+  100% {
+    left: 453px;
+    opacity: 1;
+  }
+}
+
+/*div con los textos que se integran a la tapa*/
+
+.recomendadas {
+  position: absolute;
+  top: 1750px;
+  left:155px;
+  border: 2px solid black;
+  padding: 5px;
+  background-color: #d32531;
+  width: 300px;
+  height: 300px;
+}
+
+.img1 img {
+  width: 150px;
+  height: 170px;
+  border: 1px solid white;
+}
+
+.recomendadas .titulo {
+  width: 125px;
+  position: absolute;
+  top: 12px;
+  font-size: 2.1rem;
+  left: 170px;
+  color: white;
+  font-weight: 600;
+}
+
+.recomendadas .pp {
+  color: white;
+  text-align: justify;
+  font-size: 1.2rem;
+  margin: 5px 5px 5px 5px;
+}
+
+.recomendadas a {
+  margin: 5px 0px 0px 5px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: black;
+}
+
+.recomendadas a:hover {
+  color: white;
+}
+
+.ppp .recomendadas:nth-last-child(2) {
+  left: 825px;
+  z-index: 1;
+}
+
+/*con esta regla seleccionamos el elemento que querramos dentro de un contenedor, podemos poner first o last child(hijo dependiendo de que elemento estamos buscando)*/
+
+.recomendadas:hover {
+  scale: 1.05;
+}
+
+/* hasta aca son modificadores a los dos primeros articulos del sitio*/
+
+.grid1 {
+  border-bottom: 300px solid #d32531;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 70px;
+  margin-top: 208px;
+}
+
+.grid1 img {
+  width: 100%;
+}
+
+.mj {
+  height: 140px;
+  background-color: #d32531;
+  position: absolute;
+  width: 100%;
+  top: 710px;
+}
+
+.mj p {
+  padding-left: 100px;
+  width: 700px;
+  font-family: "abril";
+  font-size: 5rem;
+  color: white;
+  font-weight: 900;
+}
+
+/* hasta aca modificadores al grid de artistas*/
+
+.tb {
+  margin-top: 30px;
+  padding: 10px 0px 10px 0px;
+  background-color: #d32531;
+  margin-bottom: 360px;
+}
+
+.tb h1 {
+  font-family: "abril";
+  font-size: 4rem;
+  color: white;
+  margin: 0px 0px 10px 195px;
+}
+
+.tb img {
+  margin-left: 145px;
+  border: 5px solid white;
+}
+
+.tb p {
+  padding-left: 140px;
+  width: 630px;
+  color: white;
+  text-align: justify;
+  font-size: 1.2rem;
+  margin: 5px 5px 5px 5px;
+}
+
+aside {
+  border: 5px solid black;
+  border-radius: 40px;
+  position: absolute;
+  top: 1335px;
+  left: 765px;
+  width: 400px;
+  height: 300px;
+  background-color: white;
+}
+
+aside p {
+  margin: 20px 0px 0px 20px;
+  font-family: "abril";
+  font-size: 2rem;
+}
+
+aside div {
+  margin: 10px 0px 10px 20px;
+  width: 300px;
+  height: 50px;
+  border: 1px solid greenyellow;
+}
+
+/*articulo con aside*/
+
+footer {
+  margin-top: 0px;
+  background-color: #d32531;
+  height: 230px;
+}
+
+footer img {
+  width: 20%;
+}
+
+.logo3 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+footer p {
+  font-family: "rock";
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: white;
+}
+
+footer p {
+  text-shadow: 3px 3px 1px black;
+}
+
+footer p a {
+  text-decoration: none;
+  font-family: "rock";
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 3px 3px 1px black;
+}
+
+footer p:hover {
+  scale: 1.1;
+}
+
+footer ul li {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0px 10px 10px 10px;
+}
+
+footer ul {
+  margin: 0px 230px 0px 230px;
+}
+
+.izq {
+  margin: 0px 0px 0px 100x;
+  float: left;
+}
+
+.der {
+  margin: 0px 100px 0px 0x;
+  float: right;
+}
+
+.ultimo {
+  clear: both;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.ultimo h3 {
+  font-size: 0.8rem;
+  font-family: "REM";
+  color: white;
+}
+
+/*modificaciones al footer*/
+
+/*hasta aca el css del index*/
+
+.div-d {
+  margin-top: 60px;
+  border-bottom: 40px solid #d32531;
+  background-color: #d32531;
+  height: auto;
+}
+
+.grid-d {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 250px 250px;
+}
+
+.grid-d img {
+  width: 100%;
+  height: 250px;
+}
+
+.div-d h1 {
+  font-family: "abril";
+  font-weight: 900;
+  font-size: 2.3rem;
+  color: white;
+}
+
+.div-d h2 {
+  font-family: "abril";
+  font-weight: 100;
+  font-size: 1.9rem;
+  color: white;
+}
+
+.div-d div {
+  text-align: center;
+  padding: 15px 0px 0px 0px;
+  margin: auto;
+}
+
+/* FORMULARIO */
+
+.formulario {
+  background-color: rgb(184, 184, 184);
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 40px;
+  width: 700px;
+  margin-left: 320px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-family: monospace;
+  font-size: 15px;
+}
+
+/* FUENTE PARA LOS LABELS  */
+
+#recibirnotif {
+  position: absolute;
+  right: 600px;
+  bottom: -120px;
+}
+
+#terminosypref {
+  position: absolute;
+  right: 600px;
+  bottom: -100px;
+}
+
+/*  CAMPOS DE DATOS DEL FORMULARIO */
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+  padding: 10px;
+  border: 1px solid #b40b0b;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="tel"]:hover,
+textarea:hover,
+select:hover {
+  border-color: #b61414;
+  background-color: rgb(205, 206, 131);
+}
+
+/* BOTÓN ENVIAR */
+
+button[type="btnenviar"] {
+  background-color: #b41414;
+  color: #000000;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="btnenviar"]:hover {
+  background-color: #880f0f;
+}
+
+.filter{
+  filter: grayscale(1);
+}
+

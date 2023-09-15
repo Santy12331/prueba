@@ -1,0 +1,321 @@
+/* Santiago Alvarez y Valentio Cotte */
+
+@font-face {
+  font-family: "REM";
+  src: url(../fonts/REM-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "rock";
+  src: url(../fonts/Rocking.ttf);
+}
+
+@font-face {
+  font-family: "satisfy";
+  src: url(../fonts/Satisfy-Regular.ttf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #111111;
+}
+
+audio {
+  position: absolute;
+  z-index: 6;
+  width: 200px;
+  height: 20px;
+  bottom: 5px;
+}
+
+body {
+  width: 100%;
+  height: 690px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(
+    circle,
+    rgba(17, 17, 17, 0) 1%,
+    rgb(63, 5, 5) 75%
+  );
+  overflow: hidden;
+}
+
+/* PANTALLA NEGRA DEL PRINCIPIO */
+.animBG {
+  width: 100%;
+  height: 120%;
+  position: absolute;
+  animation-name: introvid;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  background-color: #000000;
+  z-index: 2;
+}
+
+/* ANIMACION DEL VIDEO DE ENTRADA (DESAPARECER) */
+#intro {
+  animation-name: introvid;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  z-index: 3;
+  width: 400px;
+}
+
+/* ANIMACION DESAPARECER */
+@keyframes introvid {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* FOTO DE LA BANDA */
+#pkBG {
+  position: absolute;
+  height: 105%;
+  z-index: -1;
+}
+
+/* LOGO ROLLING STONE */
+.logo {
+  width: 55%;
+  position: absolute;
+  top: -300px;
+  animation-name: rollingstone;
+  animation-duration: 5s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+}
+
+/* ANIMACION LOGO RS */
+@keyframes rollingstone {
+  0% {
+    top: -300px;
+  }
+  100% {
+    top: 5px;
+  }
+}
+
+/* BOTÓN VOLVER */
+.volver {
+  position: absolute;
+  z-index: 3;
+  top: 40px;
+  left: 40px;
+  font-family: "rock";
+  padding: 10px;
+  height: 55px;
+}
+
+#a1 {
+  position: relative;
+  font-size: 30px;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+}
+
+/* ANIMACION APARECER */
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+/* NOMBRE DE LA BANDA ESQUINA SUPERIOR IZQUIERDA */
+.nom-banda {
+  position: absolute;
+  z-index: 3;
+  top: 40px;
+  right: 40px;
+  font-family: "rock";
+  background-color: #a81015;
+  padding: 10px;
+  height: 78px;
+  opacity: 0;
+  animation-name: aparecer;
+  animation-duration: 4s;
+  animation-delay: 6s;
+  animation-fill-mode: forwards;
+}
+
+#nom-banda-txt {
+  position: relative;
+  font-size: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+}
+
+/*  ---------------TEXTOS DESPLEGABLES ---------------- */
+.textos {
+  position: absolute;
+  bottom: 30px;
+  width: 420px;
+  z-index: 5;
+  opacity: 0;
+  animation-name: aparecer;
+  animation-duration: 4s;
+  animation-delay: 6s;
+  animation-fill-mode: forwards;
+}
+
+.toggle {
+  display: none;
+}
+
+.lbl-toggle {
+  display: block;
+  font-weight: 600;
+  font-family: "Satisfy";
+  font-size: 30px;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  color: #f5f5f5;
+  transition: all 0.25s ease-out;
+  background-color: #a81015;
+}
+
+.lbl-toggle:hover {
+  color: #ffffff;
+}
+
+/* Triangulo a la izquierda del texto con animacion */
+.lbl-toggle::before {
+  content: " ";
+  display: inline-block;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 7px solid currentColor;
+  margin-right: 15px;
+  transform: translateY(-2px);
+  transition: transform 0.2s ease-out;
+}
+
+/* Estilos del texto interior */
+.colapsable-contenido .contenido-interior {
+  background: rgba(153, 62, 62, 0.2);
+  border: 1px solid rgba(99, 5, 5, 0.45);
+  padding: 10px;
+  color: rgb(177, 177, 177);
+  font-family: "REM";
+  font-size: 14px;
+}
+
+/* Se le coloca una altura de 0px para asi ocultar el contenido desplegable */
+.colapsable-contenido {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.25s ease-in-out;
+}
+
+/* Desplegar texto al hacer click */
+.toggle:checked + .lbl-toggle + .colapsable-contenido {
+  max-height: 100vh;
+}
+
+/* Rotar el triangulo al hacer click */
+.toggle:checked + .lbl-toggle::before {
+  transform: rotate(90deg) translateX(-3px);
+}
+
+#texto1 {
+  left: 30px;
+}
+
+#texto2 {
+  left: 475px;
+}
+
+#texto3 {
+  right: 30px;
+}
+
+/* FORMULARIO */
+
+.formulario {
+  background-color: rgb(184, 184, 184);
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 40px;
+  width: 700px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-family: monospace;
+  font-size: 15px;
+}
+
+/* FUENTE PARA LOS LABELS  */
+
+#recibirnotif {
+  position: absolute;
+  right: 620px;
+  bottom: 50px;
+}
+
+#terminosypref {
+  position: absolute;
+  right: 620px;
+  bottom: 70px;
+}
+
+/*  CAMPOS DE DATOS DEL FORMULARIO */
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+  padding: 10px;
+  border: 1px solid #b40b0b;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="tel"]:hover,
+textarea:hover,
+select:hover {
+  border-color: #b61414;
+  background-color: rgb(205, 206, 131);
+}
+
+/* BOTÓN ENVIAR */
+
+button[type="btnenviar"] {
+  background-color: #b41414;
+  color: #000000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="btnenviar"]:hover {
+  background-color: #880f0f;
+}
